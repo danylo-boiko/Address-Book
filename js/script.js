@@ -20,10 +20,12 @@ window.onload = () => {
     let editLinks = document.querySelectorAll('.editRecord');
     editLinks.forEach(link => link.addEventListener('click', (event) => {
         let record = JSON.parse(localStorage.getItem(event.target.parentElement.parentElement.firstChild.innerText));
+
         addOrUpdateRecordForm.phone.value = record.phone;
         addOrUpdateRecordForm.fullName.value = record.fullName;
         addOrUpdateRecordForm.email.value = record.email;
         addOrUpdateRecordForm.address.value = record.address;
+
         showAddNewRecordForm();
     }));
 
@@ -31,11 +33,11 @@ window.onload = () => {
     let deleteLinks = document.querySelectorAll('.deleteRecord');
     deleteLinks.forEach(link => link.addEventListener('click', (event) => {
         localStorage.removeItem(event.target.parentElement.parentElement.firstChild.innerText);
+
         location.reload();
     }));
 
     document.getElementById('showAddOrUpdateRecordForm').addEventListener('click', showAddNewRecordForm);
-
     document.getElementById('sortByPhone').addEventListener('click', () => sort(0));
     document.getElementById('sortByFullName').addEventListener('click', () => sort(1));
     document.getElementById('sortByEmail').addEventListener('click', () => sort(2));
