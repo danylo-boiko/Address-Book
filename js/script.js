@@ -1,14 +1,14 @@
 window.onload = () => {
     updateRecordsTable();
 
-    //adding a new record
-    let addOrEditRecordForm = document.getElementById('addNewOrUpdateRecordForm');
-    addOrEditRecordForm.addEventListener('submit', () => {
+    //add or update record
+    let addOrUpdateRecordForm = document.getElementById('addNewOrUpdateRecordForm');
+    addOrUpdateRecordForm.addEventListener('submit', () => {
         let newRecord = {
-            phone: addOrEditRecordForm.phone.value,
-            fullName: addOrEditRecordForm.fullName.value,
-            email: addOrEditRecordForm.email.value,
-            address: addOrEditRecordForm.address.value
+            phone: addOrUpdateRecordForm.phone.value,
+            fullName: addOrUpdateRecordForm.fullName.value,
+            email: addOrUpdateRecordForm.email.value,
+            address: addOrUpdateRecordForm.address.value
         };
 
         let serialNewRecord = JSON.stringify(newRecord);
@@ -18,18 +18,18 @@ window.onload = () => {
 
     //edit record
     let editLinks = document.querySelectorAll('.editRecord');
-    editLinks.forEach(link=> link.addEventListener('click', (event) => {
+    editLinks.forEach(link => link.addEventListener('click', (event) => {
         let record = JSON.parse(localStorage.getItem(event.target.parentElement.parentElement.firstChild.innerText));
-        addOrEditRecordForm.phone.value = record.phone;
-        addOrEditRecordForm.fullName.value = record.fullName;
-        addOrEditRecordForm.email.value = record.email;
-        addOrEditRecordForm.address.value = record.address;
+        addOrUpdateRecordForm.phone.value = record.phone;
+        addOrUpdateRecordForm.fullName.value = record.fullName;
+        addOrUpdateRecordForm.email.value = record.email;
+        addOrUpdateRecordForm.address.value = record.address;
         showAddNewRecordForm();
     }));
 
     //delete record
     let deleteLinks = document.querySelectorAll('.deleteRecord');
-    deleteLinks.forEach(link=> link.addEventListener('click', (event) => {
+    deleteLinks.forEach(link => link.addEventListener('click', (event) => {
         localStorage.removeItem(event.target.parentElement.parentElement.firstChild.innerText);
         location.reload();
     }));
@@ -39,9 +39,14 @@ window.onload = () => {
 
 let updateRecordsTable = () => {
     document.getElementById('recordsList').innerHTML = '';
-    for (let i = 0, len = localStorage.length; i < len; i++) {
-        let record = JSON.parse(localStorage.getItem(localStorage.key(i)));
 
+    if (localStorage.length === 0) {
+        document.getElementById('recordsList').innerHTML = '<tr><td colspan="5">You have no records. Why not add a few?</td></tr>';
+        return;
+    }
+
+    for (let i = 0; i < localStorage.length; i++) {
+        let record = JSON.parse(localStorage.getItem(localStorage.key(i)));
         document.getElementById('recordsList').innerHTML +=
             '<tr><td>' + record.phone + '</td><td>' + record.fullName + '</td><td>' + record.email + '</td><td>' + record.address +
             '</td><td><span class="editRecord">Edit</span> | <span class="deleteRecord">Delete</span></td></tr>';
