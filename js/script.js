@@ -2,7 +2,7 @@ window.onload = () => {
     updateRecordsTable();
 
     //add or update record
-    let addOrUpdateRecordForm = document.getElementById('addNewOrUpdateRecordForm');
+    let addOrUpdateRecordForm = document.getElementById('addOrUpdateRecordForm');
     addOrUpdateRecordForm.addEventListener('submit', () => {
         let newRecord = {
             phone: addOrUpdateRecordForm.phone.value,
@@ -34,7 +34,7 @@ window.onload = () => {
         location.reload();
     }));
 
-    document.getElementById('showAddNewOrUpdateRecordForm').addEventListener('click', showAddNewRecordForm);
+    document.getElementById('showAddOrUpdateRecordForm').addEventListener('click', showAddNewRecordForm);
 };
 
 let updateRecordsTable = () => {
@@ -55,6 +55,6 @@ let updateRecordsTable = () => {
 
 let showAddNewRecordForm = () => {
     document.getElementById('mainTable').style.display = 'none';
-    document.getElementById('showAddNewOrUpdateRecordForm').style.display = 'none';
-    document.getElementById('addNewOrUpdateRecordForm').style.display = 'block';
+    document.getElementById('showAddOrUpdateRecordForm').style.display = 'none';
+    document.getElementById('addOrUpdateRecordForm').style.display = 'block';
 };

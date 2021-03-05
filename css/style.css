@@ -17,14 +17,14 @@ td, th {
     border: 2px solid black;
 }
 
-#showAddNewOrUpdateRecordForm {
+#showAddOrUpdateRecordForm {
     margin-top: 5px;
     padding: 10px 15px;
     border: 2px solid black;
     background: #cccccc;
 }
 
-#addNewOrUpdateRecordForm {
+#addOrUpdateRecordForm {
     width: 200px;
     display: none;
 }
