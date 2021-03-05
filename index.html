@@ -5,20 +5,20 @@
     <title>Address Book</title>
     <link rel="stylesheet" href="css/style.css"/>
     <script src="js/script.js"></script>
+    <script src="js/sort.js"></script>
 </head>
 <body>
     <table id="mainTable">
         <thead>
             <tr>
-                <th>Phone</th>
-                <th>Full Name</th>
-                <th>Email</th>
-                <th>Address</th>
+                <th id="sortByPhone">Phone</th>
+                <th id="sortByFullName">Full Name</th>
+                <th id="sortByEmail">Email</th>
+                <th id="sortByAddress">Address</th>
                 <th>Operation</th>
             </tr>
         </thead>
         <tbody id="recordsList"></tbody>
-        <span id=""></span>
     </table>
     <button id="showAddOrUpdateRecordForm">Add new record</button>
     <form id="addOrUpdateRecordForm">

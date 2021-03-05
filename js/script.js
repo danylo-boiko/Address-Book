@@ -35,6 +35,11 @@ window.onload = () => {
     }));
 
     document.getElementById('showAddOrUpdateRecordForm').addEventListener('click', showAddNewRecordForm);
+
+    document.getElementById('sortByPhone').addEventListener('click', () => sort(0));
+    document.getElementById('sortByFullName').addEventListener('click', () => sort(1));
+    document.getElementById('sortByEmail').addEventListener('click', () => sort(2));
+    document.getElementById('sortByAddress').addEventListener('click', () => sort(3));
 };
 
 let updateRecordsTable = () => {
