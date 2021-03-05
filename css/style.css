@@ -1,0 +1,48 @@
+body {
+    font-family: Arial, serif;
+    font-weight: normal;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th {
+    background: #cccccc;
+}
+
+td, th {
+    padding: 10px 15px;
+    border: 2px solid black;
+}
+
+#showAddNewOrUpdateRecordForm {
+    margin-top: 5px;
+    padding: 10px 15px;
+    border: 2px solid black;
+    background: #cccccc;
+}
+
+#addNewOrUpdateRecordForm {
+    width: 200px;
+    display: none;
+}
+
+input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: solid black;
+}
+
+input[type="text"] {
+    border-width: 2px 2px 0 2px;
+}
+
+input[type="submit"] {
+    border-width: 2px 2px 2px 2px;
+}
+
+input:focus {
+    outline: none;
+}
