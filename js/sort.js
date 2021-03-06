@@ -1,4 +1,4 @@
-let sort = (field) => {
+let sortByField = (field) => {
     let rows, i, shouldSwitch;
     let table = document.getElementById("mainTable");
     let switching = true;
