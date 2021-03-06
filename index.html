@@ -8,6 +8,14 @@
     <script src="js/sort.js"></script>
 </head>
 <body>
+    <form id="fullNameFilterForm">
+        <label>
+            <input type="text" name="fullNameFilter" placeholder="Full Name"/>
+        </label>
+        <label>
+            <input type="submit" name="filter" value="Filter"/>
+        </label>
+    </form>
     <table id="mainTable">
         <thead>
             <tr>
@@ -20,8 +28,8 @@
         </thead>
         <tbody id="recordsList"></tbody>
     </table>
-    <button id="showAddOrUpdateRecordForm">Add new record</button>
-    <form id="addOrUpdateRecordForm">
+    <button id="showAddOrEditRecordForm">Add new record</button>
+    <form id="addOrEditRecordForm">
         <div>
             <label>
                 <input type="text" name="phone" placeholder="Phone"/>
@@ -37,7 +45,7 @@
             </label>
         </div>
         <div>
-            <input id="addOrUpdateRecord" type="submit" value="Add new or update record"/>
+            <input type="submit" value="Add new record (or Save)"/>
         </div>
     </form>
 </body>

@@ -17,14 +17,14 @@ td, th {
     border: 2px solid black;
 }
 
-#showAddOrUpdateRecordForm {
+#showAddOrEditRecordForm {
     margin-top: 5px;
     padding: 10px 15px;
     border: 2px solid black;
     background: #cccccc;
 }
 
-#addOrUpdateRecordForm {
+#addOrEditRecordForm {
     width: 200px;
     display: none;
 }
@@ -46,4 +46,19 @@ input[type="submit"] {
 
 input:focus {
     outline: none;
+}
+
+#fullNameFilterForm {
+    margin-bottom: 3px;
+}
+
+input[name="fullNameFilter"] {
+    border-width: 2px 2px 2px 2px;
+    width: 200px;
+    float: left;
+}
+
+input[name="filter"] {
+    width: 100px;
+    margin-left: 5px;
 }
