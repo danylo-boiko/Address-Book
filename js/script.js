@@ -88,14 +88,14 @@ let updateEditLinks = () => {
 
         showAddOrEditRecordForm();
     }));
-}
+};
 
 let updateDeleteLinks = () => {
     document.querySelectorAll('.deleteRecord').forEach(link => link.addEventListener('click', (event) => {
         localStorage.removeItem(event.target.parentElement.parentElement.firstChild.innerText);
         updateRecordsTable();
     }));
-}
+};
 
 let showAddOrEditRecordForm = () => {
     document.getElementById('mainTable').style.display = 'none';
@@ -109,4 +109,4 @@ let showMainTable = () => {
     document.getElementById('showAddOrEditRecordForm').style.display = 'block';
     document.getElementById('fullNameFilterForm').style.display = 'block';
     document.getElementById('addOrEditRecordForm').style.display = 'none';
-}
+};
