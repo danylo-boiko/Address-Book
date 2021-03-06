@@ -2,10 +2,10 @@ window.onload = () => {
     updateRecordsTable();
 
     let addOrEditRecordForm = document.getElementById('addOrEditRecordForm');
-    addOrEditRecordForm.addEventListener('submit', (event) => addOrUpdateRecord(addOrEditRecordForm, event));
+    addOrEditRecordForm.addEventListener('submit', (e) => addOrUpdateRecord(addOrEditRecordForm, e));
 
     let filterFullNameForm = document.getElementById('fullNameFilterForm');
-    filterFullNameForm.addEventListener('submit', (event) => filterFullName(filterFullNameForm, event));
+    filterFullNameForm.addEventListener('submit', (e) => filterFullName(filterFullNameForm, e));
 
     document.getElementById('showAddOrEditRecordForm').addEventListener('click', showAddOrEditRecordForm);
 
@@ -15,8 +15,12 @@ window.onload = () => {
     document.getElementById('sortByAddress').addEventListener('click', () => sortByField(3));
 };
 
-let addOrUpdateRecord = (form, event) => {
-    event.preventDefault();
+let addOrUpdateRecord = (form, e) => {
+    e.preventDefault();
+
+    if(!validateInputs(form)){
+        return;
+    }
 
     let newRecord = {
         phone: form.phone.value,

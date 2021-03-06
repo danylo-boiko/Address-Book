@@ -1,5 +1,5 @@
-let filterFullName = (form,event) =>{
-    event.preventDefault();
+let filterFullName = (form,e) =>{
+    e.preventDefault();
 
     let countFilterRecords = 0;
     document.getElementById('recordsList').innerHTML = '';
