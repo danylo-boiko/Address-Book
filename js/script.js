@@ -30,13 +30,13 @@ window.onload = () => {
     filterFullNameForm.addEventListener('submit', (event) => {
         event.preventDefault();
 
-        let countFilerResult = 0;
+        let countFilterRecords = 0;
         document.getElementById('recordsList').innerHTML = '';
 
         for (let i = 0; i < localStorage.length; i++) {
             let record = JSON.parse(localStorage.getItem(localStorage.key(i)));
             if (record.fullName.includes(filterFullNameForm.fullNameFilter.value)) {
-                countFilerResult++;
+                countFilterRecords++;
                 document.getElementById('recordsList').innerHTML +=
                     '<tr><td>' + record.phone + '</td><td>' + record.fullName + '</td><td>' + record.email + '</td><td>' + record.address +
                     '</td><td><span class="editRecord">Edit</span> | <span class="deleteRecord">Delete</span></td></tr>';
@@ -46,7 +46,7 @@ window.onload = () => {
         updateEditLinks();
         updateDeleteLinks();
 
-        if (countFilerResult === 0) {
+        if (countFilterRecords === 0) {
             document.getElementById('recordsList').innerHTML = '<tr><td colspan="5">No records with a similar full name.</td></tr>';
         }
     });
