@@ -13,7 +13,7 @@ let validateInputs = (form) => {
     }
 
     if (fullName === '') {
-        alert('full name cannot be blank');
+        alert('Full name cannot be blank');
         return false;
     } else if (!isFullName(fullName)) {
         alert('Not a valid full name');
