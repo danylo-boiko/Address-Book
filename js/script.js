@@ -13,14 +13,10 @@ window.onload = () => {
             address: addOrEditRecordForm.address.value
         };
 
-        addOrEditRecordForm.phone.value = '';
-        addOrEditRecordForm.fullName.value = '';
-        addOrEditRecordForm.email.value = '';
-        addOrEditRecordForm.address.value = '';
-
         let serialNewRecord = JSON.stringify(newRecord);
         localStorage.setItem(newRecord.phone, serialNewRecord);
 
+        addOrEditRecordForm.reset();
         showMainTable();
         updateRecordsTable();
     });
