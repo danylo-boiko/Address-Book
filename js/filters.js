@@ -1,4 +1,4 @@
-let filterFullName = (form,e) =>{
+let filterFullName = (form, e) => {
     e.preventDefault();
 
     let countFilterRecords = 0;

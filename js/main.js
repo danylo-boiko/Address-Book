@@ -18,7 +18,7 @@ window.onload = () => {
 let addOrUpdateRecord = (form, e) => {
     e.preventDefault();
 
-    if(!validateInputs(form)){
+    if (!validateInputs(form)) {
         return;
     }
 
